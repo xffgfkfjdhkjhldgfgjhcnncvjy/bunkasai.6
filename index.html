@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文化祭展示：ESP32人数カウントシステム</title>
+<style>
+
+    body {
+
+      font-family: "Yu Gothic", sans-serif;
+
+      margin: 0;
+
+      padding: 0;
+
+      background-color: #fafafa;
+
+      color: #333;
+
+      line-height: 1.6;
+
+    }
+
+    header {
+
+      background-color: #2c3e50;
+
+      color: white;
+
+      padding: 20px;
+
+      text-align: center;
+
+    }
+
+    nav {
+
+      background: #34495e;
+
+      text-align: center;
+
+      overflow-x: auto;
+
+      white-space: nowrap;
+
+    }
+
+    nav a {
+
+      display: inline-block;
+
+      padding: 10px 20px;
+
+      color: white;
+
+      text-decoration: none;
+
+    }
+
+    nav a:hover {
+
+      background: #1abc9c;
+
+    }
+
+    section {
+
+      padding: 20px;
+
+      max-width: 900px;
+
+      margin: auto;
+
+      background: white;
+
+      margin-top: 15px;
+
+      border-radius: 10px;
+
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+
+    }
+
+    h2 {
+
+      border-left: 5px solid #1abc9c;
+
+      padding-left: 10px;
+
+      font-size: 1.3em;
+
+    }
+
+    img {
+
+      max-width: 100%;
+
+      border-radius: 8px;
+
+    }
+
+    .form-box {
+
+      background: #f0f0f0;
+
+      padding: 20px;
+
+      border-radius: 10px;
+
+    }
+
+    footer {
+
+      text-align: center;
+
+      padding: 10px;
+
+      background: #34495e;
+
+      color: white;
+
+      margin-top: 40px;
+
+      font-size: 0.9em;
+
+    }
+
+    /* ==== ギャラリーのレイアウト ==== */
+
+    .gallery {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      gap: 15px;
+
+      margin-top: 15px;
+
+    }
+
+    .gallery-item {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 10px;
+
+      transition: transform 0.3s;
+
+    }
+
+    .gallery-item:hover {
+
+      transform: scale(1.03);
+
+    }
+
+    .gallery-item img {
+
+      width: 100%;
+
+      display: block;
+
+    }
+
+    .caption {
+
+      text-align: center;
+
+      margin-top: 5px;
+
+      font-size: 0.9em;
+
+    }
+
+    /* ==== スマホ対応 ==== */
+
+    @media (max-width: 600px) {
+
+      header h1 {
+
+        font-size: 1.2em;
+
+      }
+
+      nav a {
+
+        padding: 8px 12px;
+
+        font-size: 0.9em;
+
+      }
+
+      section {
+
+        padding: 15px;
+
+      }
+
+    }
+</style>
+</head>
+<body>
+<header>
+<h1>文化祭展示：ESP32人数カウントシステム</h1>
+<p>場所：香川高専　詫間キャンパス｜日時：11月1日、11月2日 9:00〜15:00</p>
+</header>
+<nav>
+<a href="#top">トップ</a>
+<a href="#system">仕組み</a>
+<a href="#work">作業内容</a>
+<a href="#form">感想フォーム</a>
+<a href="#summary">まとめ</a>
+</nav>
+<section id="top">
+<h2>1. トップページ</h2>
+<p><strong>統計：</strong>リアルタイムで来場人数を表示（ESP32でカウント）</p>
+<p><strong>簡単な仕組み：</strong>赤外線センサーとESP32を使って、人が通過するとカウントされます。</p>
+<p><strong>テーマ選択の理由：</strong>通信技術を活用し、リアルタイムで人の動きを見える化したいと思ったからです。</p>
+</section>
+<section id="system">
+<h2>2. 仕組み</h2>
+<h3>使用機器と用途</h3>
+<ul>
+<li>ESP32：人数カウントとWeb送信</li>
+<li>VL53L0X：距離測定による補正</li>
+<li>スピーカー・LED：カウント時の反応表示</li>
+</ul>
+<h3>流れ
+</h3>
+<img src="image.jpg" align="center"alt="システムの流れ図">
+</section>
+<section id="work">
+<h2>3. 作業内容</h2>
+<h3>ホームページ制作チーム</h3>
+<p><strong>担当：</strong>小西、岩本、三木、山本</p>
+<div class="gallery">
+<div class="gallery-item">
+<img src="S__60096522.jpg" alt="HTML作業風景">
+<div class="caption">HTML構成を作成中</div>
+</div>
+<div class="gallery-item">
+<img src="S__60096523.jpg" alt="デザイン確認">
+<div class="caption">デザインの確認</div>
+</div>
+</div>
+<h3>プログラミングチーム</h3>
+<p><strong>担当：</strong>藤本、中條</p>
+<div class="gallery">
+<div class="gallery-item">
+<img src="program1.jpg" alt="ESP32配線作業">
+<div class="caption">ESP32の配線確認</div>
+</div>
+<div class="gallery-item">
+<img src="program2.jpg" alt="テスト風景">
+<div class="caption">動作テストの様子</div>
+</div>
+</div>
+</section>
+<section id="form">
+<h2>4. 感想フォーム</h2>
+<div class="form-box">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfD0HazZ70dZNbWl7v5pH0dvgHPFpIiilOQ9rU7JbaDzvX-sg/viewform?usp=header">
+<p> 感想フォームへの回答を下のボタン[回答]からお願いします。</p>
+<input type="submit" value="回答" style="background:#1abc9c;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">
+</form>
+</div>
+</section>
+<section id="summary">
+<h2>5. まとめ</h2>
+<h3>学んだこと</h3>
+<p>チームで協力して制作する大切さや、実際に動く仕組みを作る難しさを学びました。</p>
+<h3>苦労・工夫</h3>
+<p>センサーの誤検知を減らすために、距離や反応速度を調整しました。</p>
+<h3>結果・成果</h3>
+<p>来場者数を正確にカウントし、リアルタイム表示に成功しました。</p>
+<h3>今後の展望</h3>
+<p>次は混雑度の自動判定やスマホ連携を実装していきたいです。</p>
+<h3>感謝の言葉</h3>
+<p>ご協力いただいた先生方、来場者の皆さん、本当にありがとうございました。</p>
+</section>
+<footer>
+&copy; 2025 ○○高校 情報技術部
+</footer>
+<script>
+
+  // --- ダミーカウンター ---
+
+  let count = 123;
+
+  document.getElementById("counter").textContent = count;
+</script>
+</body>
+</html>
+
+ 
